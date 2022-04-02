@@ -1,0 +1,59 @@
+# config by Evan Koehler
+
+window:
+  # adds padding to the terminal (looks great with rounded corners)
+  padding:
+    x: 20
+    y: 20
+
+  opacity: 1
+
+font:
+  # I'm using JetBrains fonts, which I recommend, but feel free to edit it !
+  normal:
+    style: Medium
+    family: source code pro
+  # sets font size to 10px
+  size: 10.0
+
+colors:
+  # sets background color to light gray (#eee) and font color to white (#fff)
+  primary:
+    background: "#2E343E"
+    foreground: "#c5c8c6"
+
+  # Normal colors
+  normal:
+    black:   '#1d1f21'
+    red:     '#cc6666'
+    green:   '#b5bd68'
+    yellow:  '#f0c674'
+    blue:    '#81a2be'
+    magenta: '#b294bb'
+    cyan:    '#8abeb7'
+    white:   '#c5c8c6'
+
+  # Bright colors
+  bright:
+    black:   '#666666'
+    red:     '#d54e53'
+    green:   '#b9ca4a'
+    yellow:  '#e7c547'
+    blue:    '#7aa6da'
+    magenta: '#c397d8'
+    cyan:    '#70c0b1'
+    white:   '#eaeaea'
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black:   '#131415'
+    red:     '#864343'
+    green:   '#777c44'
+    yellow:  '#9e824c'
+    blue:    '#556a7d'
+    magenta: '#75617b'
+    cyan:    '#5b7d78'
+    white:   '#828482'
