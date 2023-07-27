@@ -6,3 +6,5 @@ then
 else
    ibus engine BambooUs >> /dev/null
 fi
+
+## Nếu các ông dùng cái này thì chọn phương thức nhập là Bamboo Và BambooUS nha
