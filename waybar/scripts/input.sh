@@ -6,4 +6,3 @@ then
 else
    echo VN
 fi
-
