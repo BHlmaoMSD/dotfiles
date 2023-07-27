@@ -21,7 +21,6 @@ def write_output(text, player):
     sys.stdout.write(json.dumps(output) + '\n')
     sys.stdout.flush()
 
-
 def on_play(player, status, manager):
     logger.info('Received new playback status')
     on_metadata(player, player.props.metadata, manager)
