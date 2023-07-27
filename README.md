@@ -1,4 +1,4 @@
-# My Hyprland dotfiles!
+# My dotfiles!
 
 ## Some previews
 ![Logo](Previews/Preview1.png)
