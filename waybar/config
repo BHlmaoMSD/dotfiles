@@ -56,6 +56,7 @@
         "tooltip-format-disconnected": "Disconnected",
 	"nospacing": 1,
 	"on-click": "/home/tdm/.config/waybar/scripts/network/rofi-network-manager.sh",
+
     },
     "pulseaudio": {
         "format": "{icon}",
