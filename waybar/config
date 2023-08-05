@@ -46,7 +46,25 @@
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "  {:%a, %d %b %Y} ",
-	"format": "   {:%H:%M} ",
+        "format": "   {:%H:%M} ",
+        "calendar": {
+                    "weeks-pos"     : "none",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#8fbcbb'><b>{}</b></span>",
+                              "days":       "<span color='#8a909e'>{}</span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#81a1c1'><b>{}</b></span>",
+                              "today":      "<span color='#88c0d0'><b>{}</b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "none",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
     "network": {
         "format-wifi": "{icon}",
