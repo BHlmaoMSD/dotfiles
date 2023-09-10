@@ -6,11 +6,11 @@
      "margin-right": 10,
     "height": 30,
     "spacing": 0,
-    "modules-left": ["custom/launcher","wlr/workspaces","cpu","memory"],
+    "modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory"],
     "modules-center": ["custom/song_name","custom/pre","custom/spotify","custom/next"],
     "modules-right": ["tray","network", "pulseaudio","clock","custom/powermenu"],
 
-    "wlr/workspaces": {
+"hyprland/workspaces": {
 	"on-click": "activate",
 	"format": "{icon}",
 	"format-icons": {
@@ -23,10 +23,7 @@
 		"urgent": "󱓻",
 	},
 	"persistent_workspaces": {
-		"1": [],
-		"2": [],
-		"3": [],
-		"4": [],
+		"*": 4,
 	}
     },
     "memory": {
