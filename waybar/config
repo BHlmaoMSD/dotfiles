@@ -8,24 +8,38 @@
     "spacing": 0,
     "modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory"],
     "modules-center": ["custom/song_name","custom/pre","custom/spotify","custom/next"],
-    "modules-right": ["tray","network", "pulseaudio","clock","custom/powermenu"],
+    "modules-right": ["custom/ibus","tray","network", "pulseaudio","clock","custom/powermenu"],
+
+"hyprland/window": {
+    "format": "👉 {}",
+    "rewrite": {
+        "(.*) - Mozilla Firefox": "🌎 $1",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+},
 
 "hyprland/workspaces": {
-	"on-click": "activate",
+	"active-only": false,
+	"all-outputs": true,
 	"format": "{icon}",
+	"show-special": true,
+	"persistent-workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+	},
 	"format-icons": {
+    		"1": "",
+    		"2": "",
+    		"3": "",
+    		"4": "",
 		"default": "",
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
 		"active": "󱓻",
 		"urgent": "󱓻",
-	},
-	"persistent_workspaces": {
-		"*": 4,
-	}
-    },
+  },
+},
     "memory": {
     "interval": 3,
     "format": "   {}% ",
@@ -43,7 +57,7 @@
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "  {:%a, %d %b %Y} ",
-        "format": "   {:%H:%M} ",
+	"format": " ⠀ {:%H:%M} ",
         "calendar": {
                     "weeks-pos"     : "none",
                     "on-scroll"     : 1,
@@ -59,17 +73,18 @@
                     "on-click-right": "none",
                     "on-click-forward": "tz_up",
                     "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
+                    "on-scroll-up": "none",
+                    "on-scroll-down": "none"
                     }
     },
     "network": {
+        "format-ethernet": "󰈀 ",
         "format-wifi": "{icon}",
         "format-disconnected": "󰤭 ",
         "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤥 ","󰤨 "],
 	"tooltip-format-wifi": "{essid}",
-        "tooltip-format-disconnected": "Disconnected",
-	"nospacing": 1,
+	"tooltip-format-ethernet": "IP: {ipaddr}",
+  "nospacing": 1,
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -80,14 +95,15 @@
             "headphone": " ",
             "default": ["󰕿 ", "󰖀 ", "󰕾 "]
         },
-        "on-click": "pamixer -t",
+  "on-click": "pamixer -t",
 	"on-click-right": "pavucontrol",
 	"scroll-step": 5,
     },
     "custom/launcher": {
 	"format": "  ",
 	"tooltip": false,
-	"on-click": "/home/tdm/.config/rofi/launchers/misc/launcher.sh &"
+	"on-click": "/home/tdm/.config/rofi/launchers/type-2/launcher.sh",
+  "on-click-right": "/home/tdm/.config/waybar/scripts/swww.sh /home/tdm/Pictures/Wallpapers/ &"
     },
     "custom/next": {
         "exec": "python3 ~/.config/waybar/scripts/next.py --player spotify",
