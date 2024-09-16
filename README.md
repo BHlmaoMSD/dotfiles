@@ -13,11 +13,11 @@
 
 ## Stuffs used
 
- - WM:[Hyprland](https://github.com/hyprwm/Hyprland)
- - Bar:[Waybar](https://github.com/Alexays/Waybar)
- - Terminal:[Foot](https://codeberg.org/dnkl/foot)
+ - WM: [Hyprland](https://github.com/hyprwm/Hyprland)
+ - Bar: [Waybar](https://github.com/Alexays/Waybar)
+ - Terminal: [Foot](https://codeberg.org/dnkl/foot)
  - Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
- - Launcher+powermenu:[rofi-lbonn-wayland](https://github.com/lbonn/rofi). Also credit to [adi1090x](https://github.com/adi1090x) for the rofi themes
+ - Launcher+powermenu: [rofi-lbonn-wayland](https://github.com/lbonn/rofi). Also credit to [adi1090x](https://github.com/adi1090x) for the rofi themes
 
 ## Installation
  - You know what to do.
