@@ -1,6 +1,9 @@
 # My dotfiles!
 
 ## Some previews
+![Logo](Previews/Hyprlock.png)
+
+
 ![Logo](Previews/Preview1.png)
 
 
