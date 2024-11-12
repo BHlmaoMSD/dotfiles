@@ -22,18 +22,18 @@
     ### Geometry ###
 
     # dynamic width from 0 to 300
-    width = (0, 500)
+    width = (0, 600)
     # constant width of 300
     # width = 500
 
     # The maximum height of a single notification, excluding the frame.
-    height = 145
+    height = 130
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-center
 
     # Offset from the origin
-    offset = 10x10
+    offset = 10x15
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -64,7 +64,7 @@
     progress_bar_corner_radius = 0
 
     # Corner radius for the icon image.
-    icon_corner_radius = 0
+    icon_corner_radius = 5
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -92,7 +92,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
     frame_color = "#85b4ea"
@@ -124,7 +124,6 @@
     ### Text ###
 
     font = source-code-pro 12
-
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
     line_height = 0
@@ -137,7 +136,7 @@
     #        <u>underline</u>
     #
     #        For a complete reference see
-    #        <https://docs.gtk.org/Pango/pango_markup.html>.
+    #        https://docs.gtk.org/Pango/pango_markup.html>.
     #
     # strip: This setting is provided for compatibility with some broken
     #        clients that send markup even though it's not enabled on the
@@ -201,7 +200,7 @@
     # enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = ePapirus-Dark
+    icon_theme = Papirus
     enable_recursive_icon_lookup = true
 
     # You can also set multiple icon themes, with the leftmost one being used first.
@@ -216,7 +215,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 80
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
     # icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
@@ -265,7 +264,7 @@
 
     # Uncomment this if you want to let notications appear under fullscreen
     # applications (default: overlay)
-    layer = top
+    layer = overlay
 
     # Set this to true to use X11 output on Wayland.
     force_xwayland = false
