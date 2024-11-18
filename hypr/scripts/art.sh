@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 url=$(playerctl metadata mpris:artUrl)
 artist=$(playerctl metadata xesam:artist)
-title=$(playerctl metadata xesam:album)
+album=$(playerctl metadata xesam:album)
 metadata=$(printf "$artist - $album")
 
 if [ $url == "No player found" ]
