@@ -10,8 +10,6 @@
 ![Logo](Previews/Preview2.png)
 
 
-![Logo](Previews/Preview3.png)
-
 
 
 ## Stuffs used
