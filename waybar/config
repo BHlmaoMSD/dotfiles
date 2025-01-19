@@ -8,7 +8,7 @@
     "spacing": 0,
     "modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory"],
     "modules-center": ["custom/song_name","custom/pre","custom/spotify","custom/next"],
-    "modules-right": ["custom/ibus","tray","network", "pulseaudio","clock","custom/powermenu"],
+    "modules-right": ["tray","custom/ibus","network","pulseaudio","clock","custom/powermenu"],
 
 "hyprland/window": {
     "format": "👉 {}",
@@ -17,6 +17,7 @@
         "(.*) - fish": "> [$1]"
     },
     "separate-outputs": true
+    
 },
 
 "hyprland/workspaces": {
@@ -35,8 +36,10 @@
     		"2": "",
     		"3": "",
     		"4": "",
+        "5": "",
+        "6": "",
 		"default": "",
-		"active": "󱓻",
+		"active": "󰹞󰹞󰹞󰹞󰹞󰹞",
 		"urgent": "󱓻",
   },
 },
@@ -69,13 +72,6 @@
                               "today":      "<span color='#88c0d0'><b>{}</b></span>"
                               }
                     },
-        "actions":  {
-                    "on-click-right": "none",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "none",
-                    "on-scroll-down": "none"
-                    }
     },
     "network": {
         "format-ethernet": "󰈀 ",
@@ -84,15 +80,25 @@
         "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤥 ","󰤨 "],
 	"tooltip-format-wifi": "{essid}",
 	"tooltip-format-ethernet": "IP: {ipaddr}",
+  "tooltip-format-disconnected": "No Internet Connection",
   "nospacing": 1,
     },
+    "bluetooth": {
+	      "format": "󰂯 {status}",
+	      "format-connected": "",
+	      "format-connected-battery": "",
+	      // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	  "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%"
+  },
     "pulseaudio": {
         "format": "{icon}",
 	"nospacing": 1,
 	"tooltip-format": "Volume : {volume}%",
         "format-muted": "󰝟 ",
         "format-icons": {
-            "headphone": " ",
             "default": ["󰕿 ", "󰖀 ", "󰕾 "]
         },
   "on-click": "pamixer -t",
@@ -129,7 +135,6 @@
 	"exec": "/home/tdm/.config/waybar/scripts/input.sh &",
 	"interval": 1,
 	"tooltip": false,
-	"tooltip-format": "{}",
 	"on-click": "/home/tdm/.config/waybar/scripts/ibus.sh &",
     },
    "custom/spotify": {
