@@ -1,0 +1,245 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "left",
+    "height": 700,
+    "margin-top": 4,
+    "margin-bottom": 4,
+    "margin-left": 4,
+    "width": 50,
+
+    "modules-left": [
+	"custom/menu",
+        "niri/workspaces"
+    ],
+
+    // "modules-center": [
+    //     "niri/window"
+    // ],
+
+    "modules-right": [
+	"group/tray",
+        "network",
+        "group/more",
+	"battery",
+        "clock",
+        "custom/powerbutton"
+    ],
+
+
+    "niri/workspaces": {
+        "rotate": 270,
+	"active-only": false,
+	"all-outputs": false,
+	"format": "{icon}",
+	"show-special": false,
+	"persistent-workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+		"*": " "
+	},
+	"format-icons": {
+		"default": "",
+		"active": "󱓻",
+		"urgent": "󱓻",
+      },
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d\n%m\n%y}",
+        "format": "{:%H\n%M}",
+        "interval": 60,
+        "calendar": {
+                    "format": {
+                              "months":     "<span color='#8fbcbb'><b>{}</b></span>",
+                              "days":       "<span color='#8a909e'>{}</span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#81a1c1'><b>{}</b></span>",
+                              "today":      "<span color='#88c0d0'><b>{}</b></span>"
+                              }
+                    },
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "󰝟",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute 0 toggle",
+        "tooltip": true,
+	"tooltip-format": "Volume : {volume}%",
+        "justify": "center",
+        "reverse-scrolling": true
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "vertical"
+    },
+
+    "group/audio": {
+        "modules" : [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        }
+    },
+
+    "backlight": {
+        "scroll-step": 5,
+        "format": "{icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+	"tooltip": false,
+        "tooltip-format": "Brightness: {brightness}%",
+        "justify": "center",
+        "reverse-scrolling": true
+    },
+
+    "backlight/slider": {
+        "min": 3,
+        "max": 100,
+        "orientation": "vertical",
+    },
+
+    "group/brightness": {
+        "modules" : [
+            "backlight",
+            "backlight/slider"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        }
+    },
+
+    "group/more": {
+        "modules" : [
+            "group/audio",
+            "group/brightness",
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        }
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}\n{icon}",
+        "format-full": "{capacity}\n{icon}",
+        "format-charging": "{capacity}\n",
+        "format-plugged": "{capacity}\n",
+        //"format-alt": "{time} {icon}",
+        "tooltip-format": "{power} W, {timeTo}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""],
+        "justify": "center"
+    },
+    
+    "niri/window": {
+        "tooltip": false,
+        "format": "{}",
+        "rotate": 270,
+        "rewrite": {
+            "^null$": "Desktop"
+        }
+    },
+
+    "custom/appmenu": {
+        "format": "󰀻",
+        "on-click": "niri msg action toggle-overview",
+        "tooltip": false
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "close"
+    },
+
+    "group/apps": {
+        "modules" : [
+            "custom/appmenu",
+            "wlr/taskbar"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        }
+    },
+
+    "tray": {
+        //"icon-size": 18,
+        "spacing": 20
+    },
+
+    "group/tray": {
+        "modules": [
+            "custom/arrow",
+            "tray",
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        }
+    },
+
+    "custom/arrow": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-ethernet": "󰈀 ",
+        "format-wifi": "{icon}",
+        "format-disconnected": "󰤭 ",
+        "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤥 ","󰤨 "],
+	"tooltip-format-wifi": "{essid}: {ipaddr}",
+	"tooltip-format-ethernet": "IP: {ipaddr}",
+  	"tooltip-format-disconnected": "No Internet Connection",
+  	"nospacing": 0
+    },
+
+    "custom/powerbutton": {
+        "format": "⏻",
+        "on-click": "~/.config/rofi/powermenu/powermenu.sh &",
+        "tooltip": false
+    },
+
+    "custom/menu": {
+        "format": "",
+        "on-click": "~/.config/rofi/launchers/launcher.sh &",
+	"on-click-right": "~/.config/waybar/scripts/swww.sh ~/Pictures/Wallpapers/ &",
+        "tooltip": false
+    }
+}

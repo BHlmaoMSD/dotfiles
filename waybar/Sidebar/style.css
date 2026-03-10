@@ -1,0 +1,227 @@
+* {
+  font-family: JetBrainsMono Nerd Font, sourcecodepro;
+  font-size: 14px;
+  /*border-radius: 0px;*/
+  transition: 0.25s ease-out;
+}
+
+window#waybar {
+  background-color: #242933;
+  color: #ffffff;
+  border-radius: 8px;
+  border-width: 3px;
+  border-color: #3b4252;
+  border-style: solid;
+}
+
+window#waybar.hidden {
+  opacity: 0.1;
+}
+
+#window {
+  color: #64727d;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 2px 0px @gruv-beige;
+}
+
+#workspaces { 
+    padding: 0px 0px;
+    background: transparent;
+    background-color: #3b4252;
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+
+#workspaces button {
+	border: none;
+	color:  #d4d2a9;
+	background: transparent;
+	box-shadow: none;
+  transition: all 0.3s ease-in-out;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+#workspaces button.active {
+	color:  #81A1C1;
+	background: inherit;
+	animation: button_activate 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+    margin-bottom: -2px;
+    margin-top: -2px;
+}
+
+#workspaces button.urgent {
+	color:  #fa9f8e;	
+	background: inherit;
+    margin-bottom: -2px;
+    margin-top: -2px;
+}
+
+#workspaces button.empty {
+	color:  #85909e;
+}
+
+#workspaces button:hover {
+	border: none;
+	background: radial-gradient(circle, rgba(25, 79, 255, 0.1) 20%, rgba(132,129,156,0) 30%);
+}
+
+#workspaces button.active:hover, #workspaces button.urgent:hover {
+	background: inherit;
+}
+
+#tray,
+#custom-tray,
+#custom-reboot,
+#custom-suspend,
+#custom-lock,
+button,
+#window, 
+#network,
+#backlight,
+#backlight-slider,
+#pulseaudio,
+#pulseaudio-slider,
+#battery,
+#clock { 
+    padding: 10px 0px;
+    background: transparent;
+    background-color: #3b4252;
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+#custom-powerbutton {
+    color: #e78284;
+    padding: 10px 0px 20px 0px;
+}
+
+#custom-menu {
+    color: #7a95c9;
+    padding: 20px 0px 15px 0px;
+}
+
+#window {
+    margin: 20px 0px;
+}
+
+window#waybar.empty #window {
+    opacity: 0;
+}
+
+window#waybar.empty #clock {
+    border-radius: 0 0 20px 0;
+}
+
+#pulseaudio.muted:hover,
+#pulseaudio:hover {
+    transition-duration: .5s;
+    background-color: #617180;
+    border-radius: 0px 0px 8px 8px;
+}
+
+#pulseaudio.muted {
+    color: #fb958b;
+}
+
+#pulseaudio-slider {
+    background-color: #617180;
+    margin-bottom: 0px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 1;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 60px;
+    min-width: 10px;
+    border-radius: 5px;
+    background: #242933;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: #81a1c1;
+}
+
+#pulseaudio-slider:hover highlight {
+    background: #88c0d0;
+}
+
+#backlight:hover {
+    background-color: #617180;
+    border-radius: 0px 0px 8px 8px;
+}
+
+#backlight-slider {
+    background-color: #617180;
+    margin-bottom: 0px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#backlight-slider trough {
+    min-height: 60px;
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: #242933;
+}
+
+#backlight-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: #88c0d0;
+}
+
+#backlight-slider:hover highlight {
+    background: #81a1c1;
+}
+
+#battery:hover, 
+#battery.charging:hover, 
+#battery.plugged:hover {
+    color: @gruv-green;
+    transition-duration: .5s;
+    background-color: @hover-black;
+}
+
+#battery,
+#battery.charging,
+#battery.plugged {
+    box-shadow: inset 2px 0px @gruv-green;
+}
+
+window#waybar.empty #custom-powerbutton {
+    border-radius: 0 20px 0 0;
+}
+
